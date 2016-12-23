@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<title>Html Terrain</title>
+<style type="text/css">
+        * {
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+                font-size: 10pt;
+        }
+        h2 {
+                margin: 1.5em 1em .5em;
+        }
+        .menu {
+                position: absolute;
+                top: 50px;
+                margin-left: 20px;
+        }
+        ol, ul {
+                margin-left: 20px;
+        }
+        .menu div {
+                margin-bottom: 0.5em;
+        }
+        .menu input {
+                width: 50px;
+        }
+</style>
+</head>
+<body>
+        <div class="menu">
+                <h2>Change stuff:</h2>
+                <ol>
+                        <li><a href="#" onclick="myClient.applyTerrainTransform(myClient.terrainRandomHeightMap); return false;">
+                                Reset random terrain
+                        </a></li>
+                        <li><a href="#" onclick="myClient.toggleWater(); return false;">
+                                Toggle water
+                        </a></li>
+                        <li><a href="#" onclick="myClient.applyTerrainTransform(myClient.raiseTerrain); return false;">
+                                Raise terrain
+                        </a></li>
+                        <li><a href="#" onclick="myClient.applyTerrainTransform(myClient.lowerTerrain); return false;">
+                                Lower terrain
+                        </a></li>
+                        <li><a href="#" onclick="myClient.applyTerrainTransform(myClient.rollingParticle); return false;">
+                                Island-ify
+                        </a></li>
+                        <li><a href="#" onclick="myClient.applyTerrainTransform(myClient.smoothFlatten); return false;">
+                                Smooth / Flatten
+                        </a></li>
+                </ol>
+                <h2>Options</h2>
+                <div>Terrain Factor X: <input id="HeightMapFactorX" value="50"/></div>
+                <div>Terrain Factor Y: <input id="HeightMapFactorY" value="25"/></div>
+                <div>Terrain Factor Z: <input id="HeightMapFactorZ" value="80"/></div>
+                <div>Smooth Factor: <input id="SmoothFactor" value="5"/></div>
+        </div>
+        <script src="js/Three.js"/></script>
+        <script src="js/SimplexNoise.js"/></script>
+        <script src="js/Stats.js"/></script>
+        <script src="js/example2.js"/></script>
+</body>
+</html>
